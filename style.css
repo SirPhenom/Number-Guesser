@@ -1,0 +1,87 @@
+* {
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+#container {
+  background: linear-gradient(
+      to left,
+      rgb(43, 183, 218, 0.5),
+      rgb(49, 211, 92, 0.5)
+    ),
+    url("./assets/main-bg.svg") center/cover no-repeat fixed;
+}
+.left {
+  border-top-left-radius: 22.5px;
+  border-bottom-left-radius: 22.5px;
+}
+#normal-page {
+  background: linear-gradient(
+      to left,
+      rgb(43, 183, 218, 0.5),
+      rgb(45, 49, 77, 0.5)
+    ),
+    url("./assets/undraw_dark_analytics_7axy.svg") center/cover no-repeat fixed;
+}
+#classic {
+  background: linear-gradient(
+      to left,
+      rgb(43, 183, 218, 0.5),
+      rgb(45, 49, 77, 0.5)
+    ),
+    url("./assets/undraw_gaming_6oy3.svg") center/cover no-repeat fixed;
+}
+.bg-gray {
+  background: rgb(0, 0, 0, 0.5) !important;
+}
+
+.right {
+  border-top-right-radius: 22.5px;
+  border-bottom-right-radius: 22.5px;
+  border-left-width: 0px;
+}
+
+.modal-bg {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  min-width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.trapezoid {
+  height: 0;
+  border-right: 100px solid transparent;
+  border-bottom: 90vh solid white;
+}
+.aa-bg-blue {
+  background-color: rgb(45, 49, 77);
+}
+
+.aa-text-lightgreen {
+  color: hsl(136, 65%, 51%);
+}
+.aa-bg-lightblue {
+  background-color: hsl(192, 70%, 51%);
+}
+.d-flex {
+  flex-wrap: wrap !important;
+}
+
+@media screen and (max-width: 320px) {
+  .card-title h6 {
+    font-size: 100%;
+  }
+  h1 {
+    font-size: 120%;
+  }
+  #trapezoid {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .stage {
+    font-size: 20px !important;
+  }
+}

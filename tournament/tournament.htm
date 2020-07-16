@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <title>Tournament || NG</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <section id="normal-page" style="min-height: 100vh;">
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="col-12 col-md-8 border border-primary text-white bg-gray mx-auto my-2 my-md-3 py-3 rounded"
+          >
+            <!-- title -->
+            <div class="row m-2">
+              <div class="col-12">
+                <h1 class="font-weight-bold">Tournament</h1>
+                <div
+                  style="width: 20%; height: 0.25rem;"
+                  class="bg-danger"
+                ></div>
+                <p class="d-none d-md-block">
+                  Promotion is decided after each stage and each stage invloves
+                  10 rounds. Enjoy!
+                </p>
+                <div class="text-center mt-2 mt-md-0">
+                  <p
+                    class="stage font-weight-bold mb-0"
+                    style="font-size: 30px;"
+                  >
+                    Stage <span id="stage-number">1</span> Round
+                    <span id="round-number">1</span>
+                  </p>
+                  <p class="font-weight-bold m-0">
+                    Target Number: <span id="target-number">?</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- game board -->
+            <div class="row m-2">
+              <!-- user board -->
+              <div class="col-6 border border-primary m-1 mx-auto text-center">
+                <p class="font-weight-bold">
+                  You<br />
+                  Score:
+                  <span id="human-score">0</span>
+                </p>
+                <input
+                  type="number"
+                  id="human-guess"
+                  min="0"
+                  max="9"
+                  value="0"
+                  class="text-center p-1 p-md-3 mx-auto mb-2"
+                  style="font-size: 2.5em;"
+                />
+                <div
+                  class="col- mx-auto number-controls my-2 px-0 d-none d-md-block"
+                >
+                  <button
+                    class="btn btn-outline-primary border border-primary px-3 left"
+                    id="subtract"
+                    disabled
+                  >
+                    -
+                  </button>
+                  <button
+                    class="btn btn-outline-primary border border-primary px-3 right"
+                    id="add"
+                  >
+                    +
+                  </button>
+                </div>
+                <button
+                  class="btn btn-primary rounded-0 py-3 px-md-5 mb-3"
+                  id="guess"
+                >
+                  Guess
+                </button>
+              </div>
+              <!-- computer board -->
+              <div class="col-6 border border-primary m-1 mx-auto text-center">
+                <p class="font-weight-bold">
+                  Computer<br />
+                  Score:
+                  <span id="computer-score">0</span>
+                </p>
+                <h1
+                  class="mt-1 border px-4 py-3 px-md-5 py-md-4 d-inline-block"
+                  id="computer-guess"
+                >
+                  ?
+                </h1>
+                <p
+                  class="font-weight-bold text-danger mt-2"
+                  id="computer-wins"
+                ></p>
+              </div>
+              <div class="col-10 mx-auto text-center">
+                <button
+                  class="btn btn-primary px-5 text-center"
+                  id="next-round"
+                  disabled
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+            <div class="row"></div>
+            <!-- buttons -->
+            <div class="row m-2 d-md-none" id="mobile-btns">
+              <div class="my-1 mx-auto">
+                <div class="btn btn-danger">0</div>
+                <div class="btn btn-danger">1</div>
+                <div class="btn btn-danger">2</div>
+                <div class="btn btn-danger">3</div>
+                <div class="btn btn-danger">4</div>
+              </div>
+              <div class="my-1 mx-auto">
+                <div class="btn btn-danger">5</div>
+                <div class="btn btn-danger">6</div>
+                <div class="btn btn-danger">7</div>
+                <div class="btn btn-danger">8</div>
+                <div class="btn btn-danger">9</div>
+              </div>
+            </div>
+            <!-- end of buttons -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="total-result" class="modal-bg d-none">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div
+              id="congrat"
+              class="col-10 bg-white mx-auto m-4 rounded-pill text-center py-5"
+              style="min-height: 80vh;"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal fade" id="user-wins">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content p-3">
+          <div class="modal-header">
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-auto">
+            <h1>
+              COngratulations!! <br />
+              You made it to the next Stage!
+            </h1>
+            <p>
+              After the end of the 10th round, computer flogged you on score
+              board:
+            </p>
+            <h5>You: <span class="human-result"></span></h5>
+            <h5>Your opponent: <span class="computer-result"></span></h5>
+            <p>
+              PS: Starting from the next stage, the number of possible guess has
+              increased by 5
+            </p>
+          </div>
+          <div class="modal-footer mx-auto">
+            <div
+              id="continue-btn"
+              data-dismiss="modal"
+              class="btn btn-primary px-3 py-2"
+            >
+              Continue
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of modal -->
+    <!-- beginning of modal -->
+    <div class="modal fade" id="opponent-wins">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content p-3">
+          <div class="modal-header">
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-auto">
+            <h1>
+              Game Over!! <br />
+              You are out!
+            </h1>
+            <p>
+              After the end of the 10th round of Stage
+              <span id="current-stage"></span>, computer flogged you on score
+              board:
+            </p>
+            <h5>You: <span class="human-result"></span></h5>
+            <h5>Your opponent: <span class="computer-result"></span></h5>
+          </div>
+          <div class="modal-footer mx-auto">
+            <div class="d-flex">
+              <a href="./tournament.htm"
+                ><button class="btn btn-primary px-2 m-2">Restart</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="./tournament.js"></script>
+    <script src="../game.js"></script>
+  </body>
+</html>
