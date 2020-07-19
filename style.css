@@ -2,9 +2,11 @@
   font-family: "Josefin Sans", sans-serif;
   box-sizing: border-box;
 }
+
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 #container {
   background: linear-gradient(
       to left,
@@ -13,10 +15,12 @@ input[type="number"]::-webkit-inner-spin-button {
     ),
     url("./assets/main-bg.svg") center/cover no-repeat fixed;
 }
+
 .left {
   border-top-left-radius: 22.5px;
   border-bottom-left-radius: 22.5px;
 }
+
 #normal-page {
   background: linear-gradient(
       to left,
@@ -25,6 +29,7 @@ input[type="number"]::-webkit-inner-spin-button {
     ),
     url("./assets/undraw_dark_analytics_7axy.svg") center/cover no-repeat fixed;
 }
+
 #classic {
   background: linear-gradient(
       to left,
@@ -32,6 +37,22 @@ input[type="number"]::-webkit-inner-spin-button {
       rgb(45, 49, 77, 0.5)
     ),
     url("./assets/undraw_gaming_6oy3.svg") center/cover no-repeat fixed;
+}
+#tournament {
+  background: linear-gradient(
+      to left,
+      rgb(43, 183, 218, 0.5),
+      rgb(45, 49, 77, 0.5)
+    ),
+    url("./assets/undraw_Calculator_0evy.svg") center/cover no-repeat fixed;
+}
+#endless {
+  background: linear-gradient(
+      to left,
+      rgb(43, 183, 218, 0.5),
+      rgb(45, 49, 77, 0.5)
+    ),
+    url("./assets/undraw_dark_analytics_7axy.svg") center/cover no-repeat fixed;
 }
 .bg-gray {
   background: rgb(0, 0, 0, 0.5) !important;
