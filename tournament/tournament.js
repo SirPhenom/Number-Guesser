@@ -8,7 +8,6 @@ const computerResult = document.getElementsByClassName("computer-result");
 const stageNumber = document.getElementById("stage-number");
 const continueBtn = document.getElementById("continue-btn");
 var highestTarget = 10;
-// Write your code below:
 
 const generateTarget = () => Math.floor(Math.random() * highestTarget);
 

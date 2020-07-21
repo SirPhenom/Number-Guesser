@@ -4,7 +4,6 @@ let currentRoundNumber = 1;
 const nextRoundButton = document.getElementById("next-round");
 const humanResult = document.getElementsByClassName("human-result");
 const computerResult = document.getElementsByClassName("computer-result");
-// Write your code below:
 
 const generateTarget = () => Math.floor(Math.random() * 10);
 
